@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Driven Eats</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>DrivenEats</h1>
+      <p>Sua comida em 6 minutos</p>
+    </header>
+    <div class="conteudo" onclick="removerBotao()">
+      <h2>Primeiro, seu prato</h2>
+      <section class="pratos" data-identifier="dishes">
+        <article data-identifier="food-option" class="prato lasanha" onclick="selecionarPrato('.lasanha')">
+          <img src="pratos/lasanha.jpeg" alt="prato lasanha" />
+          <p data-identifier="food-title"><strong>Lasanha</strong></p>
+          <p><small>pouco de batata, um pouco de salada</small></p>
+          <p data-identifier="food-price">R$ 12,90</p>
+          <ion-icon class="icone escondido" name="checkmark-circle"></ion-icon>
+        </article>
+        <article data-identifier="food-option" class="prato frango" onclick="selecionarPrato('.frango')">
+          <img src="pratos/frango.jpeg" alt="prato frango" />
+          <p data-identifier="food-title"><strong>Flango</strong></p>
+          <p><small>pouco de batata, um pouco de salada</small></p>
+          <p data-identifier="food-price">R$ 29,90</p>
+          <ion-icon class="icone escondido" name="checkmark-circle"></ion-icon>
+        </article>
+        <article data-identifier="food-option" class="prato miojo" onclick="selecionarPrato('.miojo')">
+          <img src="pratos/miojo.jpeg" alt="prato miojo" />
+          <p data-identifier="food-title"><strong>Mioju</strong></p>
+          <p><small>pouco de batata, um pouco de salada</small></p>
+          <p data-identifier="food-price">R$ 10,90</p>
+          <ion-icon class="icone escondido" name="checkmark-circle"></ion-icon>
+        </article>
+      </section>
+
+      <h2>Agora, sua bebida</h2>
+      <section class="bebidas" data-identifier="drinks">
+        <article class="bebida dollyn" data-identifier="food-option" onclick="selecionarBebida('.dollyn')">
+          <img src="bebidas/dolly.png" alt="bebida dolly" />
+          <p data-identifier="food-title"><strong>Dollyn</strong></p>
+          <p><small>açúcar líquido de guaraná</small></p>
+          <p data-identifier="food-price">R$ 1,90</p>
+          <ion-icon class="icone escondido"  name="checkmark-circle"></ion-icon>
+        </article>
+        <article class="bebida toddin" data-identifier="food-option" onclick="selecionarBebida('.toddin')">
+          <img src="bebidas/toddy.jpeg" alt="bebida toddy" />
+          <p data-identifier="food-title"><strong>Toddyn</strong></p>
+          <p><small>achocolatado viciante</small></p>
+          <p data-identifier="food-price">R$ 15,90</p>
+          <ion-icon class="icone escondido" name="checkmark-circle"></ion-icon>
+        </article>
+        <article class="bebida suquin" data-identifier="food-option" onclick="selecionarBebida('.suquin')">
+          <img src="bebidas/sucos.jpeg" alt="bebida suco" />
+          <p data-identifier="food-title"><strong>Suquin</strong></p>
+          <p><small>limaum, groselha e tamarindo</small></p>
+          <p data-identifier="food-price">R$ 7,90</p>
+          <ion-icon class = "icone escondido" name="checkmark-circle"></ion-icon>
+        </article>
+      </section>
+
+      <h2>Por fim, sua sobremesa</h2>
+      <section class="sobremesas" data-identifier="desserts">
+        <article class="sobremesa pudim" data-identifier="food-option" onclick="selecionarSobremesa('.pudim')">
+          <img src="sobremesas/pudim.jpeg" alt="sobremesa pudim" />
+          <p data-identifier="food-title"><strong>Pôdim</strong></p>
+          <p><small>molin e melado</small></p>
+          <p data-identifier="food-price">R$ 3,98</p>
+          <ion-icon class="icone escondido" data-identifier="food-option" name="checkmark-circle"></ion-icon>
+        </article>
+        <article class="sobremesa pe-de-moleque" onclick="selecionarSobremesa('.pe-de-moleque')">
+          <img src="sobremesas/pe-de-moleque.jpeg" alt="sobremesa pé de moleque" />
+          <p data-identifier="food-title"><strong>pé di mulek</strong></p>
+          <p><small>açúcar, amendoin e outras coisas</small></p>
+          <p data-identifier="food-price">R$ 1,97</p>
+          <ion-icon class="icone escondido" name="checkmark-circle"></ion-icon>
+        </article>
+        <article class="sobremesa tomate" data-identifier="food-option" onclick="selecionarSobremesa('.tomate')">
+          <img src="sobremesas/tomate.jpeg" alt="sobremesa tomate" />
+          <p data-identifier="food-title"><strong>Tumate</strong></p>
+          <p><small>se é fruta... é sobremesa</small></p>
+          <p data-identifier="food-price">R$ 4,90</p>
+          <ion-icon class="icone escondido" name="checkmark-circle"></ion-icon>
+        </article>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <a onclick="enviarNoWpp()" class="desativar-link"><button class="button botao-desativado">Selecione os 3 itens <br>para fechar o pedido</button></a>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
